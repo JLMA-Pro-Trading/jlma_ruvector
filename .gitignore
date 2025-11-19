@@ -20,6 +20,10 @@ target
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+# Node.js
+node_modules/
+package-lock.json
+
 # Claude Flow generated files
 .claude/settings.local.json
 .mcp.json

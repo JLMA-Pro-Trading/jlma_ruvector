@@ -5,6 +5,10 @@ members = [
     "crates/ruvector-wasm",
     "crates/ruvector-cli",
     "crates/ruvector-bench",
+    "crates/router-core",
+    "crates/router-cli",
+    "crates/router-ffi",
+    "crates/router-wasm",
 ]
 resolver = "2"
 
