@@ -25,6 +25,11 @@ node_modules/
 package-lock.json
 !npm/package-lock.json
 
+# napi-rs build artifacts
+*.node
+index.js
+index.d.ts
+
 # Environment variables and secrets
 .env
 .env.local
