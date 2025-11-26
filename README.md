@@ -205,15 +205,19 @@ Over time, frequently-accessed paths get reinforced, making common queries faste
 
 ## Compression Tiers
 
-RuVector automatically compresses cold data:
+**The architecture adapts to your data.** Hot paths get full precision and maximum compute. Cold paths compress automatically and throttle resources. Recent data stays crystal clear; historical data optimizes itself in the background.
 
-| Access Frequency | Format | Compression | Example |
-|-----------------|--------|-------------|---------|
-| Hot (>80%) | f32 | 1x | Active queries |
-| Warm (40-80%) | f16 | 2x | Recent docs |
-| Cool (10-40%) | PQ8 | 8x | Older content |
-| Cold (1-10%) | PQ4 | 16x | Archives |
-| Archive (<1%) | Binary | 32x | Rarely used |
+Think of it like your computer's memory hierarchy—frequently accessed data lives in fast cache, while older files move to slower, denser storage. RuVector does this automatically for your vectors:
+
+| Access Frequency | Format | Compression | What Happens |
+|-----------------|--------|-------------|--------------|
+| **Hot** (>80%) | f32 | 1x | Full precision, instant retrieval |
+| **Warm** (40-80%) | f16 | 2x | Slight compression, imperceptible latency |
+| **Cool** (10-40%) | PQ8 | 8x | Smart quantization, ~1ms overhead |
+| **Cold** (1-10%) | PQ4 | 16x | Heavy compression, still fast search |
+| **Archive** (<1%) | Binary | 32x | Maximum density, batch retrieval |
+
+**No configuration needed.** RuVector tracks access patterns and automatically promotes/demotes vectors between tiers. Your hot data stays fast; your cold data shrinks.
 
 ## Use Cases
 
