@@ -82,9 +82,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: npm
-        run: npm install --ignore-scripts --no-optional
-        env:
-          npm_config_ignore_scripts: true
+        run: npm install --ignore-scripts --omit=optional --force
 
       - name: Build native module
         working-directory: npm/packages/core
@@ -258,9 +256,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: npm
-        run: npm install --ignore-scripts --no-optional
-        env:
-          npm_config_ignore_scripts: true
+        run: npm install --ignore-scripts --omit=optional --force
 
       - name: Publish platform packages
         working-directory: npm/packages/core

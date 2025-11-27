@@ -77,9 +77,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: crates/ruvector-gnn-node
-        run: npm install --ignore-scripts --no-optional
-        env:
-          npm_config_ignore_scripts: true
+        run: npm install --ignore-scripts --omit=optional --force
 
       - name: Build native module
         working-directory: crates/ruvector-gnn-node
