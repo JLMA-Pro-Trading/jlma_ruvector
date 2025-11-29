@@ -1,0 +1,39 @@
+[package]
+name = "exo-exotic"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Exotic cognitive experiments: Strange Loops, Dreams, Free Energy, Morphogenesis, Collective Consciousness, Temporal Qualia, Multiple Selves, Cognitive Thermodynamics, Emergence Detection, Cognitive Black Holes"
+
+[dependencies]
+exo-core = { path = "../exo-core" }
+exo-temporal = { path = "../exo-temporal" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+uuid.workspace = true
+dashmap.workspace = true
+petgraph.workspace = true
+
+# Additional dependencies for exotic experiments
+rand = "0.8"
+ordered-float = "4.2"
+parking_lot = "0.12"
+
+[dev-dependencies]
+criterion.workspace = true
+
+[[bench]]
+name = "exotic_benchmarks"
+harness = false
+
+[features]
+default = []
+simd = []
+parallel = ["rayon"]
+
+[dependencies.rayon]
+version = "1.10"
+optional = true
